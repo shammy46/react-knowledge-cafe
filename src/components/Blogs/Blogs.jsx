@@ -6,7 +6,7 @@ import Proptypes from "prop-types";
 
 
 
-const Blogs = ({handleAddToBookmark}) => {
+const Blogs = ({ handleAddToBookmark, handleMarkAsRead }) => {
 
     const [blogs, setBlogs] = useState([]);
 
@@ -26,7 +26,8 @@ const Blogs = ({handleAddToBookmark}) => {
                     <Blog
                         key={blog.id}
                         blog={blog}
-                        handleAddToBookmark ={handleAddToBookmark}>
+                        handleAddToBookmark={handleAddToBookmark}
+                        handleMarkAsRead={handleMarkAsRead}>
                     </Blog>)
             }
 
@@ -34,8 +35,9 @@ const Blogs = ({handleAddToBookmark}) => {
     );
 };
 
-Blogs.Proptypes={
-    handleAddToBookmark: Proptypes.func
+Blogs.propTypes = {
+    handleAddToBookmark: Proptypes.func,
+    handleMarkAsRead: Proptypes.func
 
 }
 
